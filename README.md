@@ -26,3 +26,13 @@ Gitflow
 ## Workflow organization
 
 All user stories are written in form of issues (see issues template). And divided on the sub-tasks that are assigned for one or more person. Each issue is also assigned to milestone and has due date. For project management we use github project board with all the issues (subtasks of user stories) as tasks. The form of the project dashbord is a simple Kanban board.
+
+## Sprint 1 results
+
+## Sprint 2 results
+
+## Sprint 3 results
+
+## Sprint 4 results 
+
+## Sprint 5 results
