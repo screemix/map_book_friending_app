@@ -12,9 +12,10 @@ Developed as a part of MAP course, Innopolis University, F21.
 
 ## Technical details
 
-- Backend - Python, FastApi
+- Backend - Python, FastApi, MongoDB
 - Frontend - React
-- ML - Pytorch, Sklearn, HuggingFace 
+- ML - Pytorch, Sklearn, HuggingFace
+- CI\CD - Docker, Github Actions, AWS, Jenkins
 
 ## Branching policy
 Gitflow
