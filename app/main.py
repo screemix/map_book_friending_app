@@ -3,6 +3,11 @@ from fastapi_users import FastAPIUsers
 from .internal.users.manager import get_user_manager
 from .internal.users.models import User, UserDB, UserCreate, UserUpdate
 from fastapi_users.authentication import JWTAuthentication
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "*",
+]
 
 SECRET = "SECRET"
 
@@ -18,6 +23,15 @@ fastapi_users = FastAPIUsers(
 )
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(
     fastapi_users.get_auth_router(jwt_authentication),
     prefix="/auth/jwt",
