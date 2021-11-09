@@ -3,19 +3,23 @@ import { Link } from 'react-router-dom'
 import history from '../../../helpers/history'
 import { regUser } from '../_model/types'
 import * as Routes from '../../../helpers/routes'
-// import { postData } from '../_model/service'
+import { signUpReq } from '../_model/service'
 
 import cn from '../Auth.module.scss'
 
+
+
 const SignUp = () => {
 	const [user, setUser] = useState<regUser>({
-		favourite_books_ids: ["."],
-		matched_users: ["."],
+		favourite_books_ids: ["string"],
+		matched_users: ["string"],
+		is_active: true,
+		is_superuser: false,
+		is_verified: false,
 	})
-
 	const handleSubmit = async (e: any) => {
 		e.preventDefault()
-		// postData(user)
+		signUpReq(user)
 		history.push(Routes.LOGIN)
 	}
 
@@ -86,7 +90,7 @@ const SignUp = () => {
 						/>
 					</label>
 					<div>
-						<button type="submit">Submit</button>
+						<button type="submit">Sign Up</button>
 					</div>
 				</form>
 				<Link to="/Login" className={cn.root__link}>Already have an account?</Link>

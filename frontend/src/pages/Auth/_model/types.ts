@@ -11,3 +11,7 @@ export interface regUser {
 	name?: string,
 	city?: string,
 }
+export interface authUser {
+	username: string,
+	password: string
+}

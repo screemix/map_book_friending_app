@@ -1,30 +1,29 @@
 import React, { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import history from '../../../helpers/history'
-
+import { LogInreq } from '../_model/service'
 import cn from '../Auth.module.scss'
 
-// async function loginUser(login: string, pass: string) {
-// 	return fetch('http://localhost:8080/login', {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		},
-// 		body: JSON.stringify(credentials)
-// 	})
-// 		.then(data => data.json())
-// }
 
 
 const LogIn = () => {
 	const [login, setLogin] = useState('')
 	const [pass, setPass] = useState('')
+	const [token, setToken] = useState('')
+	const handleSubmit = async (e: any) => {
+		e.preventDefault()
+		LogInreq(
+			login,
+			pass
+		).then((res) => {
+			setToken(res.access_token)
+			sessionStorage.setItem('token', token);
+			localStorage.setItem('token', token);
+			history.push('/home')
+		}).catch(() => {
+			alert('something went wrong, check your fields')
+		})
 
-	const handleSubmit = async () => {
-		const tempToken = 'testToken'
-		sessionStorage.setItem('token', tempToken);
-		localStorage.setItem('token', tempToken);
-		history.push('/home')
 	}
 
 	return (
@@ -56,7 +55,7 @@ const LogIn = () => {
 						/>
 					</label>
 					<div>
-						<button type="submit">Submit</button>
+						<button type="submit">Log In</button>
 					</div>
 				</form>
 				<Link to="/Signup" className={cn.root__link}>New comer?</Link>

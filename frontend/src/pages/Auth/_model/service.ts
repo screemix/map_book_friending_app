@@ -1,85 +1,40 @@
-export const temp = ''
-// export async function loginUser(login: string, pass: string, credentials: any) {
-// 	return fetch('http://localhost:8080/login', {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		},
-// 		body: JSON.stringify(credentials)
-// 	})
-// 		.then(data => data.json())
-// }
-// export async function postData(user: any) {
-// 	const response = await fetch('http://127.0.0.1:8000/auth/register', {
-// 		method: 'POST',
-// 		mode: 'no-cors', // no-cors, *cors, same-origin
-		// cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-		// credentials: 'same-origin', // include, *same-origin, omit
-		// headers: {
-			// 'Content-Type': 'application/json'
-		// },
-		// body: JSON.stringify(user) // body data type must match "Content-Type" header
-	// });
-	// return await response.json(); // parses JSON response into native JavaScript objects
-// }
-// const temp = () => {
-// 	fetch('http://127.0.0.1:8000/auth/register', {
-// 		method: 'POST',
-// 		mode: 'no-cors',
-// 		headers: {
-// 			'Accept': 'application/json',
-// 			'Content-Type': 'application/json',
-// 		},
-// 		body: JSON.stringify({
-// 			email: "temppp@example.com",
-// 			password: "stringa",
-// 			is_active: true,
-// 			is_superuser: false,
-// 			is_verified: false,
-// 			favourite_books_ids: [
-// 				"string"
-// 			],
-// 			matched_users: [
-// 				"string"
-// 			],
-// 			age: 0,
-// 			gender: "string",
-// 			name: "string",
-// 			city: "string"
-// 		})
-// 	}).then((response) => {
-// 		// console.log(response.json())
-// 		return response
-// 	})
-// 		.then((data) => {
-// 			console.log(data);
-// 		}).catch((res) => console.log(res))
-// }
-// const t = () => {
-// 	axios({
-// 		method: 'post',
-// 		url: 'http://127.0.0.1:8000/auth/register',
-// 		headers: {
-// 			'Access-Control-Allow-Origin': '*',
-// 			'Content-Type': 'application/json',
-// 			mode: 'no-cors',
-// 		},
-// 		data: {
-// 			email: "temppp@example.com",
-// 			password: "stringa",
-// 			is_active: true,
-// 			is_superuser: false,
-// 			is_verified: false,
-// 			favourite_books_ids: [
-// 				"string"
-// 			],
-// 			matched_users: [
-// 				"string"
-// 			],
-// 			age: 0,
-// 			gender: "string",
-// 			name: "string",
-// 			city: "string"
-// 		}
-// 	});
-// }
+import axios from 'axios'
+import * as types from '../_model/types'
+export const signUpReq = (user: types.regUser) => {
+	axios({
+		method: 'post',
+		url: 'http://127.0.0.1:8000/auth/register',
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Content-Type': 'application/json',
+		},
+		data: { ...user }
+	}).catch((res) => {
+		console.log(res)
+		alert('something went wrong, check your fields')
+	})
+}
+export const LogInreq = async (login: string, pass: string) => {
+	let params = new URLSearchParams()
+	params.append('grant_type', '')
+	params.append('username', login)
+	params.append('password', pass)
+	params.append('scope', '')
+	params.append('client_id', '')
+	params.append('client_secret', '')
+	const get = axios({
+		method: 'post',
+		url: 'http://127.0.0.1:8000/auth/jwt/login',
+		headers: {
+			// "accept": "application/json",
+			"accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+			"content-type": "application/x-www-form-urlencoded",
+			// 'Content-Type': 'application/json',
+
+		},
+		data: params
+	})
+	const dataPromise = get.then((response) => response.data)
+	return dataPromise
+
+}
