@@ -41,3 +41,22 @@ jobs:
         name: build and publish frontend
         working-directory: ./frontend
         run: docker build . --file Dockerfile --tag frodan/map_front && docker push frodan/map_front
+  aws_run:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: executing ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          script: |
+            sudo su
+            rm -rf map_book_friending_app
+            git clone -b dev-ops https://github.com/screemix/map_book_friending_app.git
+            cd map_book_friending_app
+            sudo docker-compose down
+            sudo docker-compose -f docker-compose.yaml up --build -d
+
