@@ -1,19 +1,17 @@
 services:
   backend:
-#    build:
-#      dockerfile: Dockerfile
-#      context: backend/.
+    #    build:
+    #      dockerfile: Dockerfile
+    #      context: backend/.
     image: frodan/map_back
-#    env_file:
-#      - .env
+    #    env_file:
+    #      - .env
     ports:
       - "8000:8000"
   frontend:
     image: frodan/map_front
-#    build:
-#      dockerfile: Dockerfile
-#      context: frontend/.
+    #    build:
+    #      dockerfile: Dockerfile
+    #      context: frontend/.
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
