@@ -53,7 +53,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           script: |
-            sudo su
             rm -rf map_book_friending_app
             git clone -b dev-ops https://github.com/screemix/map_book_friending_app.git
             cd map_book_friending_app
