@@ -3,7 +3,7 @@ import * as types from '../_model/types'
 export const signUpReq = (user: types.regUser) => {
 	axios({
 		method: 'post',
-		url: 'http://127.0.0.1:8000/auth/register',
+		url: 'http://3.120.99.44:8000/auth/register',
 		headers: {
 			'Access-Control-Allow-Origin': '*',
 			'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export const LogInreq = async (login: string, pass: string) => {
 	params.append('client_secret', '')
 	const get = axios({
 		method: 'post',
-		url: 'http://127.0.0.1:8000/auth/jwt/login',
+		url: 'http://3.120.99.44:8000/auth/jwt/login',
 		headers: {
 			// "accept": "application/json",
 			"accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
