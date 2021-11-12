@@ -13,7 +13,7 @@ services:
 #    build:
 #      dockerfile: Dockerfile
 #      context: frontend/.
-#    ports:
+    ports:
       - "3000:3000"
     depends_on:
       - backend
