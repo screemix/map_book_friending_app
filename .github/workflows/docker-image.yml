@@ -57,5 +57,5 @@ jobs:
             git clone -b dev-ops https://github.com/screemix/map_book_friending_app.git
             cd map_book_friending_app
             sudo docker-compose down
-            sudo docker-compose -f docker-compose.yaml up --build -d
+            sudo docker-compose -f docker-compose.yml up --build -d
 
