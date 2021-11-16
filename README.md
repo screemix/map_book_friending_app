@@ -1,4 +1,4 @@
-# Book friending app
+# Book friending app[![CI/CD](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml/badge.svg)](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml)
 
 ## Context
 Friending app that can match you with your potential friends based on your book taste.
