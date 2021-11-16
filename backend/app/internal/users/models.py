@@ -15,8 +15,8 @@ User.update_forward_refs()
 
 
 class UserCreate(models.BaseUserCreate):
-    favourite_books_ids: List[str]
-    matched_users: List[str]
+    favourite_books_ids: Optional[List[str]]
+    matched_users: Optional[List[str]]
     age: int
     gender: str
     name: str
