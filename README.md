@@ -1,8 +1,17 @@
-# Book friending app
+# Book friending app[![CI/CD](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml/badge.svg)](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml)
 
 ## Context
 Friending app that can match you with your potential friends based on your book taste.
 Developed as a part of MAP course, Innopolis University, F21.
+
+## Run
+```bash
+docker-compose up
+```
+Site will work on:
+```
+http://127.0.0.1:3000
+```
 
 ## Team 
 - Daniil - backend, devops
