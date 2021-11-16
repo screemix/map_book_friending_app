@@ -29,7 +29,7 @@ const Header = () => {
 					flexDirection: 'column',
 					alignItems: 'center',
 				}}>
-					<img src={avatar} style={{ margin: "10px", width: '80px' }} />
+					<img src={avatar} style={{ margin: "10px", width: '80px' }} alt="avatar" />
 					<div onClick={handleClick}>Sign Out</div>
 				</div>
 			</div>

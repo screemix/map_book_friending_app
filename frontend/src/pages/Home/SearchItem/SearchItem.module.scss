@@ -1,0 +1,60 @@
+.root{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	&__cont{
+		height: fit-content;
+		word-wrap: break-word;
+		margin-right: 5px;
+	}
+}
+.title{
+	width:200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+
+	&:hover {
+		overflow: unset;
+    	overflow-y: scroll;
+		word-wrap: break-word;
+
+	}
+}
+.author{
+	width:200px;	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	       &:hover {
+            overflow: unset;
+        }
+}
+.genres{
+	width:200px;	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	       &:hover {
+            overflow: unset;
+        }
+}
+.des{
+	width:300px;
+}
+.popup{
+	z-index: 1;
+	position: fixed;
+	top:40%;
+	right: 40%;
+	height: fit-content;
+	background-color: grey;
+	border: solid 2px black;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	padding: 10px;
+}
