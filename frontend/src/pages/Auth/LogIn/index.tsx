@@ -8,16 +8,13 @@ import cn from '../Auth.module.scss'
 const LogIn = () => {
 	const [login, setLogin] = useState('')
 	const [pass, setPass] = useState('')
-	const [token, setToken] = useState('')
 	const handleSubmit = async (e: any) => {
 		e.preventDefault()
 		LogInreq(
 			login,
 			pass
 		).then((res) => {
-			setToken(res.access_token)
-			sessionStorage.setItem('token', token);
-			localStorage.setItem('token', token);
+			localStorage.setItem('token', res.access_token);
 			history.push('/home')
 		}).catch(() => {
 			alert('something went wrong, check your fields')
