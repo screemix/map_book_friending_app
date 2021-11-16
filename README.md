@@ -6,7 +6,9 @@ Developed as a part of MAP course, Innopolis University, F21.
 
 ## Run
 ```bash
-docker-compose up
+
+echo "YOUR_MONGODB_URL" >> backend/database_url
+docker-compose up --build
 ```
 Site will work on:
 ```
