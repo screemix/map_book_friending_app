@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: python3 -m venv .
-      - run: pip install -r backend/requirements.txt
+      - run: pip install -r backend/app/internal/requirements.txt
       - run: echo ${{ secrets.MONGODB}} >> backend/database_url
       - working-directory: backend/app
         run: pytest
