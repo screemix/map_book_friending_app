@@ -3,7 +3,7 @@ from fastapi_users.db import MongoDBUserDatabase
 
 from app.internal.users.models import UserDB
 
-file = open('database_url')
+file = open('../../database_url')
 DATABASE_URL = file.readline().strip()
 file.close()
 client = motor.motor_asyncio.AsyncIOMotorClient(

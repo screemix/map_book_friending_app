@@ -2,19 +2,20 @@ name: CI/CD
 
 on:
   push:
-    branches: [ master, dev-ops ]
+    branches: [ dev-ops ]
 
 jobs:
-#  tests:
-#    runs-on: ubuntu-latest
+  tests:
+    runs-on: ubuntu-latest
 #    env:
 #      USER_LOGIN: ${{ secrets.USER_LOGIN }}
 #      USER_PASS: ${{ secrets.USER_PASS }}
-#    steps:
-#      - uses: actions/checkout@v2
-#      - run: python3 -m venv .
-#      - run: pip install -r app_python/requirements.txt
-#      - run: python app_python/test.py
+    steps:
+      - uses: actions/checkout@v2
+      - run: python3 -m venv .
+      - run: pip install -r backend/requirements.txt
+      - working-directory: backend/app
+        run: pytest
 
 
 #  build_and_publish:
