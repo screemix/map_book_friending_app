@@ -15,10 +15,6 @@ jobs:
       - run: python3 -m venv .
       - run: pip install -r backend/requirements.txt
       - run: echo ${{ secrets.MONGODB}} >> backend/app/database_url
-      - run: ls
-      - run: ls backend
-      - run: ls backend/app
-      - run: ls backend/app/internal
       - working-directory: backend/app
         run: pytest
 
