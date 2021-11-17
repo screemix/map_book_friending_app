@@ -10,7 +10,7 @@ import LogIn from './pages/Auth/LogIn'
 import Home from './pages/Home'
 import SignUp from './pages/Auth/SignUp'
 import history from './helpers/history'
-
+import Header from './components/Header'
 
 
 export default function App() {
@@ -28,6 +28,7 @@ export default function App() {
   return (
     <Router history={history}>
       <div>
+        <Header />
         <Switch>
           <Route path={Routes.HOME}>
             <Home />
