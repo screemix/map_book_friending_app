@@ -1,23 +1,19 @@
-import React, { FC, useState } from 'react'
-import { ISearchItem } from '../_model/types'
+import React, { FC } from 'react'
 
 import cn from './SearchItem.module.scss'
 
+export interface ISearchItem {
+	author: string
+	description: string
+	genres: Array<string>
+	title: string
+	id?: string
+	open: Function
+}
 const SearchItem: FC<ISearchItem> = (props) => {
-	const [open, setOpen] = useState<boolean>(false)
-	// const [text, setText] = useState<string>('')
-	// const toggle = (t: boolean) =>
-	if (open) {
-		return (
-			<div className={cn.popup}>
-				<button onClick={() => setOpen(!open)}> close</button>
-				<p>{props.description}</p>
-			</div>
-		)
-
-	}
 	return (
 		<>
+
 			<div className={cn.root}>
 				<div className={cn.root__cont}>
 					<p className={cn.title}>
@@ -40,7 +36,7 @@ const SearchItem: FC<ISearchItem> = (props) => {
 					)}
 				</div>
 				<div className={cn.root__cont}>
-					<button onClick={() => { setOpen(!open) }}> read description</button>
+					<button onClick={() => props.open(props.description)}> read description</button>
 				</div>
 			</div>
 		</>

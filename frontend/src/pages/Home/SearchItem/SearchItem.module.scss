@@ -44,17 +44,3 @@
 .des{
 	width:300px;
 }
-.popup{
-	z-index: 1;
-	position: fixed;
-	top:40%;
-	right: 40%;
-	height: fit-content;
-	background-color: grey;
-	border: solid 2px black;
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	width: 400px;
-	padding: 10px;
-}
