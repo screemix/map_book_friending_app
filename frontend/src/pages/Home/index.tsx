@@ -33,6 +33,11 @@ const Home = () => {
 			text && setDesc(text)
 		}
 	}
+	const handleKeyDown = (e: KeyboardEvent): void => {
+		if (e.key === 'Enter') {
+			searchBook()
+		}
+	}
 	return (
 		<>
 			{open &&
@@ -51,8 +56,9 @@ const Home = () => {
 						value={title}
 						onChange={e => changeVal(e.target.value)}
 						type="text"
+						onKeyDown={(e: any) => handleKeyDown(e)}
 					/>
-					<button onClick={searchBook} className={cn.search__button}>here</button>
+					<button onClick={searchBook} className={cn.search__button}>search</button>
 				</div>
 				<button className={cn.search__button} onClick={() => setOpenForm(!openForm)} style={{ marginTop: '10px', width: 'unset' }}>
 					Add new book to the catalog
