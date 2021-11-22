@@ -26,13 +26,11 @@ const SearchItem: FC<ISearchItem> = (props) => {
 					</p>
 				</div>
 				<div className={cn.genres}>
-					{props.genres.map((item) => {
-						return (
-							<p>
-								{item}
-							</p>
-						)
-					}
+					{props.genres.map((item) =>
+						<span>
+							{`${item}; `}
+						</span>
+
 					)}
 				</div>
 				<div className={cn.root__cont}>

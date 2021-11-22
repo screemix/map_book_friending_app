@@ -2,13 +2,18 @@
 	margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
-	height: 50px;
+	max-height: 70px;
+	padding: 5px;
 	&__cont{
 		height: fit-content;
 		word-wrap: break-word;
 		margin-right: 5px;
 		align-self: center;
 	}
+}
+div.root:nth-of-type(even){
+background-color: rgb(228, 228, 228);
+border-radius: 10px;
 }
 .title{
 	width:200px;
@@ -34,13 +39,9 @@
         }
 }
 .genres{
+	margin: 0;
 	width:200px;	
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	       &:hover {
-            overflow: unset;
-        }
+	align-self: center;
 }
 .des{
 	width:300px;
