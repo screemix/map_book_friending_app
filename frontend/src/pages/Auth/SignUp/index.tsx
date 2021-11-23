@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react'
-import { Link } from 'react-router-dom'
 import history from '../../../helpers/history'
 import { regUser } from '../_model/types'
 import * as Routes from '../../../helpers/routes'
@@ -22,7 +21,9 @@ const SignUp = () => {
 		signUpReq(user)
 		history.push(Routes.LOGIN)
 	}
-
+	const goto = () => {
+		history.push('Login')
+	}
 	return (
 		<>
 			<div className={cn.root}>
@@ -93,7 +94,7 @@ const SignUp = () => {
 						<button type="submit">Sign Up</button>
 					</div>
 				</form>
-				<Link to="/Login" className={cn.root__link}>Already have an account?</Link>
+				<p onClick={goto} className={cn.root__link}>New comer?</p>
 
 			</div>
 		</>

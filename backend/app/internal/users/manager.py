@@ -3,7 +3,7 @@ from typing import Optional
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager
 
-from app.internal.database import get_user_db
+from ..database import get_user_db
 from .models import UserCreate, UserDB
 
 SECRET = "SECRET"

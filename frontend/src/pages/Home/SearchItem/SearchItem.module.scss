@@ -1,0 +1,48 @@
+.root{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	max-height: 70px;
+	padding: 5px;
+	&__cont{
+		height: fit-content;
+		word-wrap: break-word;
+		margin-right: 5px;
+		align-self: center;
+	}
+}
+div.root:nth-of-type(even){
+background-color: rgb(228, 228, 228);
+border-radius: 10px;
+}
+.title{
+	width:200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+
+	&:hover {
+		overflow: unset;
+    	overflow-y: scroll;
+		word-wrap: break-word;
+
+	}
+}
+.author{
+	width:200px;	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	       &:hover {
+            overflow: unset;
+        }
+}
+.genres{
+	margin: 0;
+	width:200px;	
+	align-self: center;
+}
+.des{
+	width:300px;
+}
