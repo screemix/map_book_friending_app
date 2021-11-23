@@ -58,8 +58,8 @@ jobs:
             rm -rf map_book_friending_app
             git clone -b dev-ops https://github.com/screemix/map_book_friending_app.git
             cd map_book_friending_app
-            echo ${{ secrets.MONGODB}} >> backend/database_url
-            echo "http://3.120.99.44:8000" >> frontend/.env
+            echo ${{ secrets.MONGODB}} > backend/database_url
+            echo "REACT_APP_API_DOMAIN=http://3.120.99.44:8000" > frontend/.env
             sudo docker-compose down
             sudo docker-compose -f docker-compose.yml up --build -d
 
