@@ -15,11 +15,10 @@ class Book(BaseModel):
 
 
 class BookDB(Book):
-    _book_vector: List[float] = PrivateAttr()
+    book_vector: List[float] = []
 
     class Config:
         orm_mode = True
-        fields = {'id': '_id', '_book_vector': 'book_vector'}
 
 
 

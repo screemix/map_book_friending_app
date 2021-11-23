@@ -7,20 +7,21 @@ import {
 import { Router } from 'react-router'
 import * as Routes from './helpers/routes'
 import LogIn from './pages/Auth/LogIn'
-import Home from './pages/Home'
+import BooksPage from './pages/Home/Books'
+import UsersPage from './pages/Home/Users'
 import SignUp from './pages/Auth/SignUp'
 import history from './helpers/history'
 import Header from './components/Header'
-
 
 export default function App() {
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    if (!!token) {
-      history.push('/Home')
+    console.log(history.location.pathname)
+    if (token) {
+      history.push(Routes.HOME)
       return
-    } else if (history.location.pathname !== Routes.SIGNUP && history.location.pathname !== Routes.LOGIN) {
+    } else if (!!token && history.location.pathname !== Routes.SIGNUP && history.location.pathname !== Routes.LOGIN) {
       history.push(Routes.LOGIN)
       return
     }
@@ -31,7 +32,10 @@ export default function App() {
         <Header />
         <Switch>
           <Route path={Routes.HOME}>
-            <Home />
+            <BooksPage />
+          </Route>
+          <Route path={Routes.USERS}>
+            <UsersPage />
           </Route>
           <Route path={Routes.LOGIN}>
             <LogIn />

@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react'
 import history from '../../../helpers/history'
 import { LogInreq } from '../_model/service'
+import * as Routes from '../../../helpers/routes'
 import cn from '../Auth.module.scss'
 
 
@@ -15,7 +16,7 @@ const LogIn = () => {
 			pass
 		).then((res) => {
 			localStorage.setItem('token', res.access_token);
-			history.push('/home')
+			history.push(Routes.HOME)
 		}).catch(() => {
 			alert('something went wrong, check your fields')
 		})
