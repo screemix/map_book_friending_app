@@ -5,7 +5,7 @@ import AddBook from './AddBook'
 
 import cn from './Home.module.scss'
 
-const Home = () => {
+const BooksPage = () => {
 	const [books, setBooks] = useState<any>()
 	const [title, setTitle] = useState('')
 	const [open, setOpen] = useState<boolean>(false)
@@ -81,4 +81,4 @@ const Home = () => {
 		</>
 	)
 }
-export default memo(Home)
+export default memo(BooksPage)
