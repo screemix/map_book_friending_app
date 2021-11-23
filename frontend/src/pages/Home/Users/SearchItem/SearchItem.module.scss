@@ -1,0 +1,92 @@
+.root{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	max-height: 70px;
+	padding: 5px;
+	flex-direction: column;
+	&__cont{
+		height: fit-content;
+		word-wrap: break-word;
+		margin-right: 5px;
+		align-self: center;
+	}
+}
+.table{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	border-radius: 10px;
+	padding: 10px;
+	justify-content: space-between;
+	background-color: rgb(165, 165, 165);
+	&__item{
+		composes: table;
+		margin-top: 10px;
+		height: fit-content;
+		background-color: rgb(230, 228, 228);
+	}
+
+	p{
+		margin: 0;
+	}
+	&__name{
+		width: 20%;
+	}
+	&__age{
+		width: 10%;
+	}
+	&__gender{
+		width: 10%;
+	}
+	&__city{
+		width: 10%;
+	}
+	&__books{
+		width: 20%;
+
+	}
+	&__email{
+		width: 15%;
+	}
+	&__users{
+		width: 15%;
+	}
+
+}
+
+div.root:nth-of-type(even){
+background-color: rgb(228, 228, 228);
+border-radius: 10px;
+}
+.title{
+	width:200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+
+	&:hover {
+		overflow: unset;
+    	overflow-y: scroll;
+		word-wrap: break-word;
+
+	}
+}
+.author{
+	width:200px;	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	       &:hover {
+            overflow: unset;
+        }
+}
+.genres{
+	margin: 0;
+	width:200px;	
+	align-self: center;
+}
+.des{
+	width:300px;
+}

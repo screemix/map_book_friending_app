@@ -18,7 +18,7 @@ export default function App() {
 
   useEffect(() => {
     console.log(history.location.pathname)
-    if (token && (history.location.pathname === Routes.SIGNUP || history.location.pathname === Routes.LOGIN)) {
+    if (token) {
       history.push(Routes.HOME)
       return
     } else if (!!token && history.location.pathname !== Routes.SIGNUP && history.location.pathname !== Routes.LOGIN) {
