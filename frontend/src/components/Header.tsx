@@ -32,11 +32,17 @@ const Header = () => {
 				}}
 			>
 				<div style={{ display: 'flex', alignItems: 'center', width: "95%", justifyContent: 'center' }}>
-					<div className={cn.button} onClick={() => goto(Routes.HOME)}>
+					<div className={cn[pathname !== Routes.HOME ? 'button' : 'button__active']}
+						onClick={() => goto(Routes.HOME)}>
 						<p>Search Books</p>
 					</div>
-					<div className={cn.button} onClick={() => goto(Routes.USERS)}>
+					<div className={cn[pathname !== Routes.USERS ? 'button' : 'button__active']}
+						onClick={() => goto(Routes.USERS)}>
 						<p>Search Users</p>
+					</div>
+					<div className={cn[pathname !== Routes.PROFILE ? 'button' : 'button__active']}
+						onClick={() => goto(Routes.PROFILE)}>
+						<p>Profile</p>
 					</div>
 				</div>
 				<div style={{

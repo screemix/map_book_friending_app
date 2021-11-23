@@ -8,3 +8,4 @@ export const SETTINGS = '/settings'
 
 export const HOME = '/books'
 export const USERS = '/users'
+export const PROFILE = '/profile'

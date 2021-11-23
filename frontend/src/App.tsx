@@ -7,12 +7,12 @@ import {
 import { Router } from 'react-router'
 import * as Routes from './helpers/routes'
 import LogIn from './pages/Auth/LogIn'
-import BooksPage from './pages/Home/Books'
-import UsersPage from './pages/Home/Users'
+import BooksPage from './pages/Search/Books'
+import UsersPage from './pages/Search/Users'
 import SignUp from './pages/Auth/SignUp'
 import history from './helpers/history'
 import Header from './components/Header'
-
+import Profile from './pages/Profile'
 export default function App() {
   const token = localStorage.getItem('token')
 
@@ -36,6 +36,9 @@ export default function App() {
           </Route>
           <Route path={Routes.USERS}>
             <UsersPage />
+          </Route>
+          <Route path={Routes.PROFILE}>
+            <Profile />
           </Route>
           <Route path={Routes.LOGIN}>
             <LogIn />
