@@ -42,8 +42,29 @@ Or log in if you already used our service:
 <img width="1263" alt="Снимок экрана 2021-11-22 в 18 25 42" src="https://user-images.githubusercontent.com/43718473/142888260-c65fe458-9709-469e-88a3-da624b24a89b.png">
 
 ## Technical documentation
+Backend Swagger is available at http://{YOUR_BACKEND_HOST}/docs.
+CI/CD is deploying code from dev/ops branch to AWS Server.
+Server is available at: http://3.120.99.44:3000/.
+### Run Backend locally
+```bash
+cd backend
+pip install -r requirements.txt
+echo "YOUR_MONGODB_URL" >> database_url
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
 
-### Run
+### Run Frontend locally
+```bash
+cd frontend
+yarn install (can be done just once)
+yarn start
+```
+### Test Frontend locally
+```bash
+cd frontend
+yarn test
+```
+### Run All in Docker
 ```bash
 
 echo "YOUR_MONGODB_URL" >> backend/database_url
