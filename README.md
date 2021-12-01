@@ -115,6 +115,6 @@ Fixed CI/CD
 Wrote base backend for search
 
 ## Sprint 4 results 
-Integrated ML algotthm with backend for US6
+Wrote ML algotthm and integrated it with backend pre written code for US6 As a user I want to search for users with similar book tastes MUST
 
 ## Sprint 5 results
