@@ -110,7 +110,7 @@ Done with all [planned tasks](https://github.com/screemix/map_book_friending_app
 [Plans for the 3nd sprint](https://github.com/screemix/map_book_friending_app/milestone/4) - Backend and Frontend for user profile + user matching algorithm
 
 ## Sprint 3 results
-Done with - US5 As a user I want to my contact information be displayed for other users MUST
+Done with - [US5 As a user I want to my contact information be displayed for other users MUST](https://github.com/screemix/map_book_friending_app/issues/21)
 Fixed CI/CD
 Wrote base backend for search
 
