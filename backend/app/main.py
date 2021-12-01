@@ -8,6 +8,8 @@ from .internal.books.models import BookCreate, Book, BookDB
 from typing import List
 from .internal.users.manager import UserManager
 from .internal.books.manager import get_book_manager, BookManager
+from pydantic import UUID4
+from .internal.users import matching_index
 
 origins = [
     "*",
@@ -75,8 +77,39 @@ async def post_book(
         user_manager: UserManager = Depends(get_user_manager)
 ):
     book_obj = await book_manager.create(book)
-    print(book_obj.dict())
     upd_user = UserUpdate(**user.dict())
     upd_user.favourite_books_ids.append(book_obj.id)
-    user_manager.update(upd_user, user)
+    await user_manager.update(upd_user, user)
     return book_obj
+
+
+@app.get("/books/get_one", response_model=Book)
+async def get_book(
+        book_id: str,
+        book_manager: BookManager = Depends(get_book_manager),
+        user: User = Depends(current_user),
+        user_manager: UserManager = Depends(get_user_manager)
+):
+    book_obj = await book_manager.get(book_id)
+
+    # TODO: сделать нормальную выдачу книги без book_vector
+    book_dict = book_obj.dict()
+    book_dict['_id'] = book_dict.pop('id')
+
+    book_obj = Book(**book_dict)
+    return book_obj
+
+@app.get("/users/matched", response_model=List[User])
+async def get_matched(
+        user: User = Depends(current_user),
+        user_manager: UserManager = Depends(get_user_manager)
+):
+    book_index = matching_index.BOOK_INDEX
+    if user.book_vector is not None:
+        user_ids = matching_index.query_top_k_by_book(book_index, user.book_vector)
+        return await user_manager.get_many(user_ids.tolist())
+    else:
+        return []
+
+
+

@@ -12,12 +12,14 @@ fastapi==0.70.0
 fastapi-users==8.1.2
 fastapi-users-db-mongodb==1.0.0
 h11==0.12.0
+hnswlib==0.5.2
 httpcore==0.14.2
 httpx==0.21.1
 idna==3.3
 iniconfig==1.1.1
 makefun==1.12.1
 motor==2.5.1
+numpy==1.21.4
 packaging==21.2
 passlib==1.7.4
 pluggy==1.0.0
