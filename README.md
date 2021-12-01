@@ -115,6 +115,6 @@ Fixed CI/CD
 Wrote base backend for search
 
 ## Sprint 4 results 
-Wrote ML algotthm and integrated it with backend pre written code for US6 As a user I want to search for users with similar book tastes MUST
+Wrote ML algotthm and integrated it with backend pre written code for [US6 - As a user I want to search for users with similar book tastes MUST](https://github.com/screemix/map_book_friending_app/issues/23)
 
 ## Sprint 5 results
