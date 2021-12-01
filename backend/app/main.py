@@ -9,6 +9,7 @@ from typing import List
 from .internal.users.manager import UserManager
 from .internal.books.manager import get_book_manager, BookManager
 from pydantic import UUID4
+from .internal.users import matching_index
 
 origins = [
     "*",
@@ -103,13 +104,12 @@ async def get_matched(
         user: User = Depends(current_user),
         user_manager: UserManager = Depends(get_user_manager)
 ):
-    user_obj = await user_manager.get(UUID4('555c591d-3534-4b20-b2a2-38b17ffdd17a'))
-
-    # TODO: сделать нормальную выдачу книги без book_vector
-    # book_dict.pop('book_vector')
-
-    return [user_obj]
-
+    book_index = matching_index.BOOK_INDEX
+    if user.book_vector is not None:
+        user_ids = matching_index.query_top_k_by_book(book_index, user.book_vector)
+        return await user_manager.get_many(user_ids.tolist())
+    else:
+        return []
 
 
 
