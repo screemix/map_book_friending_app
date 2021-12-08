@@ -30,9 +30,6 @@ class BookCreate(BaseModel):
     description: str
     genres: List[str]
 
-    class Config:
-        fields = {'_book_vector': 'book_vector'}
-
 
 class BookUpdate(Book):
     pass
