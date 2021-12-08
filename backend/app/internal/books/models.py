@@ -1,5 +1,5 @@
 from pydantic import BaseModel, PrivateAttr
-from typing import List, TypeVar
+from typing import List, TypeVar, Optional
 from bson.objectid import ObjectId
 
 
@@ -24,7 +24,7 @@ class BookDB(Book):
 
 
 class BookCreate(BaseModel):
-    _book_vector: List[float] = PrivateAttr(default=[])
+    book_vector: Optional[List[float]]
     title: str
     author: str
     description: str

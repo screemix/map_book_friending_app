@@ -76,10 +76,7 @@ async def post_book(
         user: User = Depends(current_user),
         user_manager: UserManager = Depends(get_user_manager)
 ):
-    book_obj = await book_manager.create(book)
-    upd_user = UserUpdate(**user.dict())
-    upd_user.favourite_books_ids.append(book_obj.id)
-    await user_manager.update(upd_user, user)
+    book_obj = await book_manager.create(book, user=user, user_manager=user_manager)
     return book_obj
 
 
