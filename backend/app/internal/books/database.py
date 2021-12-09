@@ -44,7 +44,6 @@ class MongoDBBookDatabase(Generic[BD]):
 
     async def create(self, book: BD) -> BD:
         insert_data = book.dict()
-        insert_data['book_vector'] = []
         insertone = await self.collection.insert_one(insert_data)
         insert_id = insertone.inserted_id
         insert_id = str(insert_id)
