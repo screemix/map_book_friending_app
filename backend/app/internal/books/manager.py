@@ -73,7 +73,7 @@ class BookManager():
         liked_books_ids = user.favourite_books_ids
         liked_books_ids.append(book.id)
         user_update = UserUpdate(favourite_books_ids=liked_books_ids)
-        user_manager.update(user_update, user)
+        await user_manager.update(user_update, user)
 
 
 
