@@ -60,7 +60,7 @@ const Profile = () => {
 
 				</div>
 				<div className={cn.content__users}>
-					<h4>Matched users</h4>
+					<h4>Liked books</h4>
 					{books && books.length !== 0 ? books.map((item: any) => {
 						return (
 							<p>{item.title}</p>
