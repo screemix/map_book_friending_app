@@ -14,7 +14,7 @@ def create_index(dim=768):
             _ids.append(int(user["index_id"]))
     p = hnswlib.Index(space='cosine', dim=dim)
     p.init_index(max_elements=len(book_vec)*2, ef_construction=200, M=16)
-    if len(book_vec) != 0:
+    if len(book_vec) == 768:
         p.add_items(book_vec, _ids)
     return p
 
