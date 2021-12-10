@@ -3,7 +3,7 @@ import { getUsers, getOneBook } from './_model/service'
 import SearchItem from './SearchItem'
 
 import cn from './UsersPage.module.scss'
-
+import cnItem from './SearchItem/SearchItem.module.scss'
 const UsersPage = () => {
 	const [users, setUsers] = useState<any>()
 
@@ -77,6 +77,16 @@ const UsersPage = () => {
 				</div>
 			}
 			<div className={cn.root}>
+				<h1>Search Users:</h1>
+				<div className={cnItem.table}>
+					<p className={cnItem.table__name}>name</p>
+					<p className={cnItem.table__age}>age</p>
+					<p className={cnItem.table__gender}>gender</p>
+					<p className={cnItem.table__city}>city</p>
+					<p className={cnItem.table__books}>favourite books</p>
+					<p className={cnItem.table__email}>email</p>
+					<p className={cnItem.table__users}>matched users</p>
+				</div>
 				{users !== undefined && users.map((item: any) => {
 					return (
 						<SearchItem

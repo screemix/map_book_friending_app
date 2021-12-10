@@ -18,17 +18,8 @@ export interface ISearchItem {
 const SearchItem: FC<ISearchItem> = (props) => {
 	return (
 		<>
+			{console.log(props)}
 			<div className={cn.root}>
-				<h1>Search Users:</h1>
-				<div className={cn.table}>
-					<p className={cn.table__name}>name</p>
-					<p className={cn.table__age}>age</p>
-					<p className={cn.table__gender}>gender</p>
-					<p className={cn.table__city}>city</p>
-					<p className={cn.table__books}>favourite books</p>
-					<p className={cn.table__email}>email</p>
-					<p className={cn.table__users}>matched users</p>
-				</div>
 				<div className={cn.table__item}>
 					<p className={cn.table__name}>{props.name}</p>
 					<p className={cn.table__age}>{props.age}</p>
