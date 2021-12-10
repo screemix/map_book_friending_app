@@ -4,6 +4,9 @@ from .database import MongoDBBookDatabase
 from . import models
 from bson.objectid import ObjectId
 from ..database import get_book_db
+from .embeddings import process_description
+from ..users.models import User, UserUpdate
+from ..users.manager import UserManager
 
 
 class FastAPIBooksException(Exception):
@@ -16,7 +19,7 @@ class BookNotExists(FastAPIBooksException):
 
 class BookManager():
     """
-    User management logic.
+    Book management logic.
 
     :attribute book_db_model: Pydantic model of a DB representation of a book.
     :param book_db: Database adapter instance.
@@ -45,10 +48,10 @@ class BookManager():
         return book
 
     async def create(
-        self, book: models.BC, request: Optional[Request] = None
+        self, book: models.BC, user: Optional[User] = None, user_manager: Optional[UserManager] = None
     ) -> models.BD:
         """
-        Create a user in database.
+        Create a book in database.
 
         Triggers the on_after_register handler on success.
 
@@ -58,23 +61,33 @@ class BookManager():
         :return: A new book.
         """
 
-        # book_dict = book.dict()
-        # db_book = models.BookCreate(**book_dict)
+        book_dict = book.dict()
+        book_dict['book_vector'] = process_description(book.description)
+        book = models.BookCreate(**book_dict)
         created_book = await self.book_db.create(book)
-
+        if user is not None and user_manager is not None:
+            await self.on_after_upload(created_book, user, user_manager)
         return created_book
+
+    async def on_after_upload(self, book: models.BD, user: User, user_manager: UserManager):
+        liked_books_ids = user.favourite_books_ids
+        liked_books_ids.append(book.id)
+        user_update = UserUpdate(favourite_books_ids=liked_books_ids)
+        await user_manager.update(user_update, user)
+
+
 
     async def delete(self, book: models.BD) -> None:
         """
-        Delete a user.
+        Delete a book.
 
-        :param book: The user to delete.
+        :param book: The book to delete.
         """
         await self.book_db.delete(book)
 
     async def search(self, search_string: str) -> List[models.BD]:
         """
-        Delete a user.
+        Delete a book.
 
         :param search_string: The string for books' title matching.
         """

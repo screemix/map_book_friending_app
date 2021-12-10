@@ -1,18 +1,48 @@
-# Book friending app[![CI/CD](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml/badge.svg)](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml)
+# Book friending app
 
 ## Context
 Friending app that can match you with your potential friends based on your book taste.
 Developed as a part of MAP course, Innopolis University, F21.
 
-## Run
+## Tests
+Tests are implemented as a stage of pipeline in CI\CD. With the help of pytest, the main functionality, such as authorization, adding books, searching is analyzed.
+### Tests running
 ```bash
-
-echo "YOUR_MONGODB_URL" >> backend/database_url
-docker-compose up --build
+cd project
+python3 -m venv .
+pip install -r backend/requirements.txt
+pytest
 ```
-Site will work on:
+## Deployment (CI\CD)
+Technologies such as Docker, Github-Actions, AWS are used for deployment. For the backend and frontend of the project a Dockerfile exists. With its help, it is easy to launch individual parts of the project. With the help of docker-compose.yml there is no problem to run full project quickly. In our project all commits to main and dev-ops branches activates github actions script. It runs test stage, and if everything is okay, than it deploys the updated application to AWS server.
+### How to run
+Preparation:
+```bash
+echo "YOUR_MONGODB_URL" >> backend/database_url
+echo "REACT_APP_API_DOMAIN=http://{YOUR_HOST}:{PORT}/" >> frontend/.env
+```
+#### Run only backend
+```bash
+cd backend
+docker build . --file Dockerfile -t backend && docker run backend
+```
+#### Run only frontend
+```bash
+cd frontend
+docker build . --file Dockerfile -t frontend && docker run frontend
+```
+#### Run whole project
+```bash
+docker-compose -f docker-compose.yml up --build -d
+```
+## How to use:
+Frontend default at:
 ```
 http://127.0.0.1:3000
+```
+Backend default at:
+```
+http://127.0.0.1:8000
 ```
 
 ## Team 

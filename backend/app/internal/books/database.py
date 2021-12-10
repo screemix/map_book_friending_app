@@ -27,7 +27,7 @@ class MongoDBBookDatabase(Generic[BD]):
         self.collection.create_index(("title", TEXT), name='title_text', background=True)
 
     async def get(self, id: str) -> Optional[BD]:
-        book = await self.collection.find_one({"_id": id})
+        book = await self.collection.find_one({"_id": ObjectId(id)})
         book['_id'] = str(book['_id'])
         return self.book_db_model(**book) if book else None
 
@@ -43,7 +43,8 @@ class MongoDBBookDatabase(Generic[BD]):
         return book_list
 
     async def create(self, book: BD) -> BD:
-        insertone = await self.collection.insert_one(book.dict(include={'book_vector'}))
+        insert_data = book.dict()
+        insertone = await self.collection.insert_one(insert_data)
         insert_id = insertone.inserted_id
         insert_id = str(insert_id)
         new_book = self.book_db_model(_id=insert_id, **book.dict())

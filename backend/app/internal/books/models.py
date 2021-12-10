@@ -1,5 +1,5 @@
 from pydantic import BaseModel, PrivateAttr
-from typing import List, TypeVar
+from typing import List, TypeVar, Optional
 from bson.objectid import ObjectId
 
 
@@ -15,24 +15,20 @@ class Book(BaseModel):
 
 
 class BookDB(Book):
-    _book_vector: List[float] = PrivateAttr()
+    book_vector: List[float] = []
 
     class Config:
         orm_mode = True
-        fields = {'id': '_id', '_book_vector': 'book_vector'}
 
 
 
 
 class BookCreate(BaseModel):
-    _book_vector: List[float] = PrivateAttr(default=[])
+    book_vector: Optional[List[float]]
     title: str
     author: str
     description: str
     genres: List[str]
-
-    class Config:
-        fields = {'_book_vector': 'book_vector'}
 
 
 class BookUpdate(Book):
