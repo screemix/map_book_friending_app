@@ -2,7 +2,7 @@
 
 ## Context
 
-Friending app that can match you with your potential friends based on your book taste. Application uses the features of your favorite book to find the people with most similar taste.
+Friending app that can match you with your potential friends based on your book taste. Application uses the features of your favorite books to find the people with most similar taste.
 Developed as a part of MAP course, Innopolis University, F21.
 
 ### Team 
