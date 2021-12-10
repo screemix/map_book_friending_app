@@ -8,7 +8,7 @@ import cn from './Profile.module.scss'
 const Profile = () => {
 	const [data, setData] = useState<any>(undefined)
 	const [books, setBooks] = useState<string[]>()
-
+	const [loaded, setLoaded] = useState(false)
 	const GetMeReq = async () => {
 		getMe().then((res) => {
 			setData(res)
@@ -17,20 +17,23 @@ const Profile = () => {
 		})
 	}
 
-	const getOneBooksReq = async () => {
+	const getOneBooksReq = () => {
 		let ar: any[] = []
-		data.favourite_books_ids.forEach((item: any) => {
+		data.favourite_books_ids.forEach((item: any, index: number) => {
 			getOneBook(item).then((res) => {
-				console.log(item, ar)
 				ar.push(res)
+				if (ar.length === data.favourite_books_ids.length) {
+					setBooks(ar)
+					setLoaded(true)
+				}
+
 			}).catch((er) => {
 				// alert("Something went wrong")
 			})
 		})
-		setBooks(ar)
 	}
 	useEffect(() => {
-		if (data !== undefined) getOneBooksReq()
+		if (data !== undefined && books === undefined) getOneBooksReq()
 	}, [data])
 	useEffect(() => {
 		GetMeReq()
@@ -59,15 +62,17 @@ const Profile = () => {
 					}) : <p>no users</p>}
 
 				</div>
-				<div className={cn.content__users}>
-					<h4>Liked books</h4>
-					{books && books.length !== 0 ? books.map((item: any) => {
-						return (
-							<p>{item.title}</p>
-						)
-					}) : <p>no books</p>}
+				{loaded &&
+					<div className={cn.content__users}>
+						<h4>Liked books</h4>
+						{books && books.length !== 0 ? books.map((item: any) => {
+							return (
+								<p style={{ margin: "10px 0 0 0" }}>{item.title}</p>
+							)
+						}) : <p>no books</p>}
 
-				</div>
+					</div>
+				}
 			</div>
 		</div>
 	)

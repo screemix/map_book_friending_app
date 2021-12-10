@@ -53,6 +53,11 @@ const UsersPage = () => {
 		}
 		bookIDS && getOneBooksReq(bookIDS[index])
 	}, [index])
+	if (users === undefined || users.length === 0) {
+		return (
+			<p style={{ display: 'flex', justifyContent: 'center' }}>no matched users</p>
+		)
+	}
 	return (
 		<>
 			{open && book &&
