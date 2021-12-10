@@ -40,9 +40,23 @@ Or log in if you already used our service:
 
 <img width="400" alt="Снимок экрана 2021-11-22 в 18 23 36" src="https://user-images.githubusercontent.com/43718473/142887888-deb75081-e48a-40ca-98b8-ea6dfd656145.png">
 
-3. Then you can start by choosing your favorite books - just write the name of the book in the field:
-<img width="400" alt="Снимок экрана 2021-11-22 в 18 25 17" src="https://user-images.githubusercontent.com/43718473/142888201-d71c5438-65c3-4659-afe7-f3667d014ecd.png">
-<img width="400" alt="Снимок экрана 2021-11-22 в 18 25 42" src="https://user-images.githubusercontent.com/43718473/142888260-c65fe458-9709-469e-88a3-da624b24a89b.png">
+3. Then you can start by choosing your favorite books - press the button "search" and write the name of you favorite book in the search window:
+ 
+![telegram-cloud-photo-size-2-5303050778581252042-y](https://user-images.githubusercontent.com/43718473/145597039-6e29b7c7-a5b6-44f2-a325-c2ad455b50c0.jpg)
+![telegram-cloud-photo-size-2-5303050778581252040-y](https://user-images.githubusercontent.com/43718473/145596974-c36d0c86-3187-4d53-9fa6-808fa242f37e.jpg)
+
+Also, you can add your own book in the database if you can not find it on the site by search. You just need to add the following information about it:
+
+![telegram-cloud-photo-size-2-5303050778581252039-y](https://user-images.githubusercontent.com/43718473/145596953-f811739e-f05b-4d43-b0d7-b19f0c054101.jpg)
+
+
+
+4. Now you would be able to see the books in your profile:
+
+![telegram-cloud-photo-size-2-5303050778581252036-y](https://user-images.githubusercontent.com/43718473/145601457-fda0e7e1-e367-45a0-9253-edb4ad3b9c21.jpg)
+
+5. Then, to find new friends press the button "search user" and application will provide you top-5 similar users to you.
+![telegram-cloud-photo-size-2-5303050778581252038-y](https://user-images.githubusercontent.com/43718473/145601783-1f64a4b6-972b-4a34-a1ae-7f3b114eb769.jpg)
 
 ## Technical documentation
 
