@@ -42,21 +42,22 @@ Or log in if you already used our service:
 
 3. Then you can start by choosing your favorite books - press the button "search" and write the name of you favorite book in the search window:
  
-![telegram-cloud-photo-size-2-5303050778581252042-y](https://user-images.githubusercontent.com/43718473/145597039-6e29b7c7-a5b6-44f2-a325-c2ad455b50c0.jpg)
-![telegram-cloud-photo-size-2-5303050778581252040-y](https://user-images.githubusercontent.com/43718473/145596974-c36d0c86-3187-4d53-9fa6-808fa242f37e.jpg)
+<img width="500" alt="1" src="https://user-images.githubusercontent.com/43718473/145601984-0e0005ed-2677-4124-b9a0-bc77d7b50f11.jpg">
+<img width="500" alt="2" src="https://user-images.githubusercontent.com/43718473/145601995-fa0ab344-c39a-43d6-8bf4-b0cdf4ef1e3b.jpg">
+
 
 Also, you can add your own book in the database if you can not find it on the site by search. You just need to add the following information about it:
 
-![telegram-cloud-photo-size-2-5303050778581252039-y](https://user-images.githubusercontent.com/43718473/145596953-f811739e-f05b-4d43-b0d7-b19f0c054101.jpg)
-
+<img width="500" alt="2" src="https://user-images.githubusercontent.com/43718473/145602139-32a19990-d495-4f6e-9d90-5234898c675d.jpg">
 
 
 4. Now you would be able to see the books in your profile:
 
-![telegram-cloud-photo-size-2-5303050778581252036-y](https://user-images.githubusercontent.com/43718473/145601457-fda0e7e1-e367-45a0-9253-edb4ad3b9c21.jpg)
+<img width="500" alt="2" src="https://user-images.githubusercontent.com/43718473/145602263-dba02859-8249-4e16-bce6-940ffb10e268.jpg">
 
 5. Then, to find new friends press the button "search user" and application will provide you top-5 similar users to you.
-![telegram-cloud-photo-size-2-5303050778581252038-y](https://user-images.githubusercontent.com/43718473/145601783-1f64a4b6-972b-4a34-a1ae-7f3b114eb769.jpg)
+
+<img width="500" alt="2" src="https://user-images.githubusercontent.com/43718473/145602293-9ee0fc0d-a08e-440e-a050-c132ea5b032f.jpg">
 
 ## Technical documentation
 
