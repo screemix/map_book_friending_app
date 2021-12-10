@@ -1,39 +1,29 @@
 # Book friending app[![CI/CD](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml/badge.svg)](https://github.com/screemix/map_book_friending_app/actions/workflows/docker-image.yml)
 
 ## Context
-Friending app that can match you with your potential friends based on your book taste.
+
+Friending app that can match you with your potential friends based on your book taste. Application uses the features of your favorite book to find the people with most similar taste.
 Developed as a part of MAP course, Innopolis University, F21.
 
-## Run
-```bash
-
-echo "YOUR_MONGODB_URL" >> backend/database_url
-docker-compose up --build
-```
-Site will work on:
-```
-http://127.0.0.1:3000
-```
-
-## Team 
+### Team 
 - Daniil - backend, devops
 - Alla - ml, backend
 - Nikita - backend
 - Idel - frontend
 
-## Technical details
+### Project stack
 
 - Backend - Python, FastApi, MongoDB
 - Frontend - React
 - ML - Pytorch, Sklearn, HuggingFace
 - CI\CD - Docker, Github Actions, AWS, Jenkins
 
-## Branching policy
+### Branching policy
 Gitflow
 
-<img width="611" alt="Снимок экрана 2021-11-01 в 20 57 08" src="https://user-images.githubusercontent.com/43718473/139717929-2c3c87a6-7dae-4a46-bfbd-11ac198f1029.png">
+<img width="400" alt="Снимок экрана 2021-11-01 в 20 57 08" src="https://user-images.githubusercontent.com/43718473/139717929-2c3c87a6-7dae-4a46-bfbd-11ac198f1029.png">
 
-## Workflow organization
+### Workflow organization
 
 All user stories are written in form of issues (see issues template). And divided on the sub-tasks that are assigned for one or more person. Each issue is also assigned to milestone and has due date. For project management we use github project board with all the issues (subtasks of user stories) as tasks. The form of the project dashbord is a simple Kanban board.
 
@@ -53,6 +43,7 @@ Or log in if you already used our service:
 <img width="1263" alt="Снимок экрана 2021-11-22 в 18 25 42" src="https://user-images.githubusercontent.com/43718473/142888260-c65fe458-9709-469e-88a3-da624b24a89b.png">
 
 ## Technical documentation
+
 Backend Swagger is available at 
 ```bash
 http://{YOUR_BACKEND_HOST}/docs
@@ -92,8 +83,9 @@ Site will work on:
 http://127.0.0.1:3000
 ```
 
+## Sprint reports
 
-## Sprint 1 results
+### Sprint 1 results
 
 - Done with 2 User stories - #5 - [US0 As a user I want to sign up in the APP MUST](https://github.com/screemix/map_book_friending_app/issues/5), #10 - [US1 As a user I want to sign in in the APP MUST](https://github.com/screemix/map_book_friending_app/issues/10), #17 - [US4 As a user, I want to fill in my contacts MUST](https://github.com/screemix/map_book_friending_app/issues/17), additionaly we did research and write the code for ml embeddings to vectorize books and [collected book datset](https://github.com/screemix/map_book_friending_app/issues/2)
 
@@ -101,20 +93,18 @@ http://127.0.0.1:3000
 
 - [Plans for the 2nd sprint](https://github.com/screemix/map_book_friending_app/milestone/3) - book adding/searching, addting CI/CD+tests
 
-## Sprint 2 results
+### Sprint 2 results
 Done with all [planned tasks](https://github.com/screemix/map_book_friending_app/milestone/3?closed=1)
 - Done with US2 As a user I want to add my favorite book to APP library MUST #4
 - Done with US3 As a user, I want to search for my favorite book in the APP library MUST #14
 - Done with US16 As a developer I want to have CI/CD MUST #49
 
-[Plans for the 3nd sprint](https://github.com/screemix/map_book_friending_app/milestone/4) - Backend and Frontend for user profile + user matching algorithm
+### Sprint 3 results
+Done with [all planned tasks](https://github.com/screemix/map_book_friending_app/milestone/4)
+- Done with - [US5 As a user I want to my contact information be displayed for other users MUST](https://github.com/screemix/map_book_friending_app/issues/21)
+- Fixed CI/CD
+- Wrote base backend for search
 
-## Sprint 3 results
-Done with - [US5 As a user I want to my contact information be displayed for other users MUST](https://github.com/screemix/map_book_friending_app/issues/21)
-Fixed CI/CD
-Wrote base backend for search
-
-## Sprint 4 results 
-Wrote ML algotthm and integrated it with backend pre written code for [US6 - As a user I want to search for users with similar book tastes MUST](https://github.com/screemix/map_book_friending_app/issues/23)
-
-## Sprint 5 results
+### Sprint 4 results 
+- Wrote ML algotthm and integrated it with backend pre written code for [US6 - As a user I want to search for users with similar book tastes MUST](https://github.com/screemix/map_book_friending_app/issues/23)
+- Fixed issue with frontend and ml algorithm compatibility
