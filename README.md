@@ -5,11 +5,13 @@
 Friending app that can match you with your potential friends based on your book taste. Application uses the features of your favorite books to find the people with most similar taste.
 Developed as a part of MAP course, Innopolis University, F21.
 
+Also you can try our telegram bot written with the same functionality. Bot's repo is [here](url). The bot is available [here](https://t.me/book_friending_bot). 
+
 ### Team 
-- Daniil - backend, devops
-- Alla - ml, backend
-- Nikita - backend
-- Idel - frontend
+- [Daniil](https://github.com/Frodan) - backend, devops
+- [Alla](https://github.com/screemix) - ml, backend
+- [Nikita](https://github.com/pakrentos) - backend
+- [Idel](https://github.com/IdelIshbaev) - frontend
 
 ### Project stack
 
@@ -49,7 +51,7 @@ Or log in if you already used our service:
 
 
 ### API documentation
-API documentation is available at (Swagger): 
+API documentation  (Swagger) is available at: 
 ```bash
 http://{YOUR_BACKEND_HOST}/docs
 ```
@@ -124,3 +126,5 @@ Done with [all planned tasks](https://github.com/screemix/map_book_friending_app
 ### Sprint 4 results 
 - Wrote ML algotthm and integrated it with backend pre written code for [US6 - As a user I want to search for users with similar book tastes MUST](https://github.com/screemix/map_book_friending_app/issues/23)
 - Fixed issue with frontend and ml algorithm compatibility
+
+## How to proceed with this project
