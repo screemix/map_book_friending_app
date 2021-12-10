@@ -34,20 +34,20 @@ All user stories are written in form of issues (see issues template). And divide
 For finding new friends based on your book taste you should:
 1. Go to http://3.120.99.44:3000/login
 2. Register and provide your contact info: 
-<img width="586" alt="Снимок экрана 2021-11-22 в 18 23 09" src="https://user-images.githubusercontent.com/43718473/142887813-77a8edaa-26bf-417d-ac99-3224cfc9340e.png"> 
+<img width="400" alt="Снимок экрана 2021-11-22 в 18 23 09" src="https://user-images.githubusercontent.com/43718473/142887813-77a8edaa-26bf-417d-ac99-3224cfc9340e.png"> 
 
 Or log in if you already used our service: 
 
-<img width="600" alt="Снимок экрана 2021-11-22 в 18 23 36" src="https://user-images.githubusercontent.com/43718473/142887888-deb75081-e48a-40ca-98b8-ea6dfd656145.png">
+<img width="400" alt="Снимок экрана 2021-11-22 в 18 23 36" src="https://user-images.githubusercontent.com/43718473/142887888-deb75081-e48a-40ca-98b8-ea6dfd656145.png">
 
 3. Then you can start by choosing your favorite books - just write the name of the book in the field:
-<img width="1269" alt="Снимок экрана 2021-11-22 в 18 25 17" src="https://user-images.githubusercontent.com/43718473/142888201-d71c5438-65c3-4659-afe7-f3667d014ecd.png">
-<img width="1263" alt="Снимок экрана 2021-11-22 в 18 25 42" src="https://user-images.githubusercontent.com/43718473/142888260-c65fe458-9709-469e-88a3-da624b24a89b.png">
+<img width="400" alt="Снимок экрана 2021-11-22 в 18 25 17" src="https://user-images.githubusercontent.com/43718473/142888201-d71c5438-65c3-4659-afe7-f3667d014ecd.png">
+<img width="400" alt="Снимок экрана 2021-11-22 в 18 25 42" src="https://user-images.githubusercontent.com/43718473/142888260-c65fe458-9709-469e-88a3-da624b24a89b.png">
 
 ## Technical documentation
 
 ### Component diagram
-<img width="898" alt="Снимок экрана 2021-12-10 в 15 36 27" src="https://user-images.githubusercontent.com/43718473/145575222-fccdff9f-b1be-4c43-8b2b-6da4ed7927b8.png">
+<img width="400" alt="Снимок экрана 2021-12-10 в 15 36 27" src="https://user-images.githubusercontent.com/43718473/145575222-fccdff9f-b1be-4c43-8b2b-6da4ed7927b8.png">
 
 
 ### API documentation
