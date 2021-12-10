@@ -44,43 +44,53 @@ Or log in if you already used our service:
 
 ## Technical documentation
 
-Backend Swagger is available at 
+API documenation is available at (Swagger): 
 ```bash
 http://{YOUR_BACKEND_HOST}/docs
 ```
-CI/CD is deploying code from dev/ops branch to AWS Server.
-Server is available at: 
+
+### Deployment (CI\CD)
+Technologies such as Docker, Github-Actions, AWS are used for deployment. For the backend and frontend of the project a Dockerfile exists. With its help, it is easy to launch individual parts of the project. With the help of docker-compose.yml there is no problem to run full project quickly. In our project all commits to main and dev-ops branches activates github actions script. It runs test stage, and if everything is okay, than it deploys the updated application to AWS server.
+
+#### How to run
+Preparation:
 ```bash
-http://3.120.99.44:3000/
+echo "YOUR_MONGODB_URL" >> backend/database_url
+echo "REACT_APP_API_DOMAIN=http://{YOUR_HOST}:{PORT}/" >> frontend/.env
 ```
-### Run Backend locally
+##### Run only backend
 ```bash
 cd backend
-pip install -r requirements.txt
-echo "YOUR_MONGODB_URL" >> database_url
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+docker build . --file Dockerfile -t backend && docker run backend
 ```
-
-### Run Frontend locally
+##### Run only frontend
 ```bash
 cd frontend
-yarn install (can be done just once)
-yarn start
+docker build . --file Dockerfile -t frontend && docker run frontend
 ```
-### Test Frontend locally
+##### Run whole project
 ```bash
-cd frontend
-yarn test
+docker-compose -f docker-compose.yml up --build -d
 ```
-### Run All in Docker
-```bash
-
-echo "YOUR_MONGODB_URL" >> backend/database_url
-docker-compose up --build
-```
-Site will work on:
+### How to use:
+Frontend default at:
 ```
 http://127.0.0.1:3000
+```
+Backend default at:
+```
+http://127.0.0.1:8000
+```
+
+### Tests
+Tests are implemented as a stage of pipeline in CI\CD. With the help of pytest, the main functionality, such as authorization, adding books, searching is analyzed.
+
+#### Tests running
+```bash
+cd project
+python3 -m venv .
+pip install -r backend/requirements.txt
+pytest
 ```
 
 ## Sprint reports
