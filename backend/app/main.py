@@ -103,7 +103,10 @@ async def get_matched(
 ):
     book_index = matching_index.BOOK_INDEX
     if user.book_vector is not None:
-        user_ids = matching_index.query_top_k_by_book(book_index, user.book_vector)
+        try:
+            user_ids = matching_index.query_top_k_by_book(book_index, user.book_vector)
+        except RuntimeError:
+            return []
         return await user_manager.get_many(user_ids.tolist())
     else:
         return []
