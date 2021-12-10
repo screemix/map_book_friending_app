@@ -128,3 +128,4 @@ Done with [all planned tasks](https://github.com/screemix/map_book_friending_app
 - Fixed issue with frontend and ml algorithm compatibility
 
 ## How to proceed with this project
+Futher step to make complete this project is adding a chat ([US8 As a user I want to write messages to other users MUST #25](https://github.com/screemix/map_book_friending_app/issues/25)) to provide users possibilty to communicate. Now this project performs as an good MVP, but of course future additional features and better UI/UX could be nice things to have.
