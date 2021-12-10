@@ -10,11 +10,11 @@ def create_index(dim=768):
     users = sync_user_col
     for user in users.find({}):
         if "book_vector" in user:
-            book_vec.append(np.array(user["book_vector"]))
+            book_vec.append(np.array(user["book_vector"])) if hasattr(user["book_vector"], '__len__') and len(user["book_vector"]) == 768 else None
             _ids.append(int(user["index_id"]))
     p = hnswlib.Index(space='cosine', dim=dim)
     p.init_index(max_elements=len(book_vec)*2, ef_construction=200, M=16)
-    if len(book_vec) == 768:
+    if len(book_vec) != 0:
         p.add_items(book_vec, _ids)
     return p
 

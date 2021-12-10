@@ -66,6 +66,7 @@ class UserManager(BaseUserManager[UserCreate, UserDB]):
         user_cursor = db.find({'index_id': {'$in': ids}})
         res = []
         async for user_dict in user_cursor:
+            user_dict['book_vector'] = []
             res.append(User(**user_dict))
         return res
 
