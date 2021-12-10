@@ -44,7 +44,12 @@ Or log in if you already used our service:
 
 ## Technical documentation
 
-API documenation is available at (Swagger): 
+### Component diagram
+<img width="898" alt="Снимок экрана 2021-12-10 в 15 36 27" src="https://user-images.githubusercontent.com/43718473/145575222-fccdff9f-b1be-4c43-8b2b-6da4ed7927b8.png">
+
+
+### API documentation
+API documentation is available at (Swagger): 
 ```bash
 http://{YOUR_BACKEND_HOST}/docs
 ```
@@ -52,7 +57,8 @@ http://{YOUR_BACKEND_HOST}/docs
 ### Deployment (CI\CD)
 Technologies such as Docker, Github-Actions, AWS are used for deployment. For the backend and frontend of the project a Dockerfile exists. With its help, it is easy to launch individual parts of the project. With the help of docker-compose.yml there is no problem to run full project quickly. In our project all commits to main and dev-ops branches activates github actions script. It runs test stage, and if everything is okay, than it deploys the updated application to AWS server.
 
-#### How to run
+### How to run
+
 Preparation:
 ```bash
 echo "YOUR_MONGODB_URL" >> backend/database_url
