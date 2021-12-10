@@ -47,7 +47,7 @@ Or log in if you already used our service:
 ## Technical documentation
 
 ### Component diagram
-<img width="500" alt="Снимок экрана 2021-12-10 в 15 36 27" src="https://user-images.githubusercontent.com/43718473/145575222-fccdff9f-b1be-4c43-8b2b-6da4ed7927b8.png">
+<img width="600" alt="Снимок экрана 2021-12-10 в 15 36 27" src="https://user-images.githubusercontent.com/43718473/145575222-fccdff9f-b1be-4c43-8b2b-6da4ed7927b8.png">
 
 
 ### API documentation
